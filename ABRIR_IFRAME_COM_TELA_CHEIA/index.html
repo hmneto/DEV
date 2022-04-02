@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Make iFrame Height Dynamic Based on Content Inside Using Java</title>
+<style>
+    iframe{
+        width: 100%;
+        border: 2px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+
+<script type="application/javascript">
+var iframe = document.getElementById("myIframe");
+    
+    iframe.onload = function(){
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+</script>  
+
+
+
+<iframe src="https://www.policiamilitar.mg.gov.br/portal-pm/externo/principal.action"  sandbox="allow-same-origin"
+        onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';">
+</iframe>
+
+
+
+
+</body>
+</html>                            
