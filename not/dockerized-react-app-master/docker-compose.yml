@@ -5,7 +5,7 @@ services:
     build: .
     command: npm start
     ports:
-      - 80:80
+      - 80:3000
     # volumes:
     #   - ./build:/app/new
     image: react_container
