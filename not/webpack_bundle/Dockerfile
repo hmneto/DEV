@@ -13,7 +13,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 
-
+WORKDIR /app
 
 
 # RUN curl -O https://nodejs.org/download/release/latest-v16.x/node-v16.9.1-linux-arm64.tar.gz  
