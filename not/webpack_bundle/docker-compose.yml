@@ -4,6 +4,8 @@ services:
     container_name: webpack
     build: .
     command: node app
+    ports:
+      -80:80
     # volumes:
     #   - ./build:/app/new
     image: webpack
