@@ -41,3 +41,5 @@ RUN npm install webpack webpack-cli -g
 RUN npm install
 
 COPY . .
+
+RUN webpack

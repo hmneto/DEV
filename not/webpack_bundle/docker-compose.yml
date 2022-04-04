@@ -3,7 +3,7 @@ services:
   webpack:
     container_name: webpack
     build: .
-    command: webpack & npm start
+    command: npm start
     # volumes:
     #   - ./build:/app/new
     image: webpack
