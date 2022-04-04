@@ -3,7 +3,7 @@ services:
   webpack:
     container_name: react_container
     build: .
-    command: node app
+    command: npm start
     ports:
       - 80:80
     # volumes:
