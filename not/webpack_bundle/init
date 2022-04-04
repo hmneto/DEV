@@ -1,1 +1,0 @@
-git clone https://github.com/hmneto/DEV.git && cd DEV && cd not/webpack_bundle && docker-compose up -d --build
