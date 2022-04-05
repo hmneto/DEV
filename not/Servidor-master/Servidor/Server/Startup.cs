@@ -88,7 +88,7 @@ namespace Servidor.Server
 
             app.UseRouting();
 
-            // app.UseIdentityServer();
+            app.UseIdentityServer();
             app.UseAuthentication();
             app.UseAuthorization();
 
