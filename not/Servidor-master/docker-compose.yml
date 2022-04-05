@@ -8,7 +8,7 @@ services:
     build: .
     depends_on: 
       - db
-    command: dotnet run
+    command: dotnet ef migrations add Initial
     restart: always
     ports:
       - 80:5000
