@@ -1,6 +1,8 @@
 version: '3'
 services:
   blazor:
+    networks:
+        - application
     container_name: blazor
     working_dir: /app/Servidor/Server
     build: .
@@ -12,6 +14,8 @@ services:
       - 80:5000
 
   db:
+    networks:
+        - application
     ports:
       - 3306:3306
     container_name: db
@@ -32,3 +36,9 @@ services:
     restart: always
     ports:
       - 85:8080
+
+    networks:
+      - application
+
+networks:
+  application:
