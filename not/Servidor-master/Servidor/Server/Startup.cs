@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Servidor.Server.Data;
 using Servidor.Server.Models;
 using System.Linq;
-using Pomelo.EntityFrameworkCore.MySql;
+// using Pomelo.EntityFrameworkCore.MySql;
 
 namespace Servidor.Server
 {
@@ -28,28 +28,28 @@ namespace Servidor.Server
         public void ConfigureServices(IServiceCollection services)
         {
               // Replace with your connection string.
-        var connectionString = "server=db;user=xxxx;password=xxxx;database=xxxxx";
+        // var connectionString = "server=db;user=xxxx;password=xxxx;database=xxxxx";
 
-        // Replace with your server version and type.
-        // Use 'MariaDbServerVersion' for MariaDB.
-        // Alternatively, use 'ServerVersion.AutoDetect(connectionString)'.
-        // For common usages, see pull request #1233.
-        var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
+        // // Replace with your server version and type.
+        // // Use 'MariaDbServerVersion' for MariaDB.
+        // // Alternatively, use 'ServerVersion.AutoDetect(connectionString)'.
+        // // For common usages, see pull request #1233.
+        // var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 
-        // Replace 'YourDbContext' with the name of your own DbContext derived class.
-        services.AddDbContext<ApplicationDbContext>(
-            dbContextOptions => dbContextOptions
-                .UseMySql(connectionString, serverVersion)
-                // The following three options help with debugging, but should
-                // be changed or removed for production.
-                .LogTo(Console.WriteLine, LogLevel.Information)
-                .EnableSensitiveDataLogging()
-                .EnableDetailedErrors()
-        );
+        // // Replace 'YourDbContext' with the name of your own DbContext derived class.
+        // services.AddDbContext<ApplicationDbContext>(
+        //     dbContextOptions => dbContextOptions
+        //         .UseMySql(connectionString, serverVersion)
+        //         // The following three options help with debugging, but should
+        //         // be changed or removed for production.
+        //         .LogTo(Console.WriteLine, LogLevel.Information)
+        //         .EnableSensitiveDataLogging()
+        //         .EnableDetailedErrors()
+        // );
 
-            // services.AddDbContext<ApplicationDbContext>(options =>
-            //     options.UseSqlServer(
-            //         Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(
+                    Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
