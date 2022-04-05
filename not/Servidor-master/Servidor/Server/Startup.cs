@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Servidor.Server.Data;
 using Servidor.Server.Models;
 using System.Linq;
+using Pomelo.EntityFrameworkCore.MySql;
 
 namespace Servidor.Server
 {
