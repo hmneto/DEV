@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
 
 
@@ -19,20 +19,16 @@ services:
       MYSQL_DATABASE: xxxxx
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
+      
   blazor:
     networks:
-      - application
+        - application
     container_name: blazor
     working_dir: /app/Servidor/Server
     build: .
+    command: ["./waitforit.sh", "db:3306", "--", "sh", "run.sh"] # <-- look here!
     depends_on: 
-      db: 
-        condition: "service_healthy"
-        
+      - db
     command: dotnet ef migrations add Initial
     restart: always
     ports:
