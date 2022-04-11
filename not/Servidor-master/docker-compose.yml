@@ -1,17 +1,6 @@
 version: '3'
 services:
-  blazor:
-    networks:
-        - application
-    container_name: blazor
-    working_dir: /app/Servidor/Server
-    build: .
-    depends_on: 
-      - db
-    command: dotnet ef migrations add Initial
-    restart: always
-    ports:
-      - 80:5000
+
 
   db:
     networks:
@@ -30,6 +19,19 @@ services:
       MYSQL_DATABASE: xxxxx
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
+      
+   blazor:
+    networks:
+        - application
+    container_name: blazor
+    working_dir: /app/Servidor/Server
+    build: .
+    depends_on: 
+      - db
+    command: dotnet ef migrations add Initial
+    restart: always
+    ports:
+      - 80:5000
 
   adminer:
     image: adminer
