@@ -25,7 +25,7 @@ services:
       retries: 10
   blazor:
     networks:
-        - application
+      - application
     container_name: blazor
     working_dir: /app/Servidor/Server
     build: .
