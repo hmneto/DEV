@@ -19,7 +19,10 @@ services:
       MYSQL_DATABASE: xxxxx
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
-      
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
   blazor:
     networks:
         - application
@@ -27,7 +30,8 @@ services:
     working_dir: /app/Servidor/Server
     build: .
     depends_on: 
-      - db
+      db:
+        condition: service_healthy
     command: dotnet ef migrations add Initial
     restart: always
     ports:
