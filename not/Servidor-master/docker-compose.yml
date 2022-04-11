@@ -20,7 +20,7 @@ services:
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
       
-   blazor:
+  blazor:
     networks:
         - application
     container_name: blazor
