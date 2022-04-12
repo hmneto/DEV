@@ -20,6 +20,7 @@ public partial class MainPage : ContentPage
             {
                 var uri = "http://10.0.2.2:5102/Teste";
                 //var uri = "http://192.168.1.1:5102/Teste";
+                //var uri = "https://testesslxamarin.herokuapp.com";
                 var result = client.GetStringAsync(uri);
                 Console.WriteLine(result.Result);
             }
