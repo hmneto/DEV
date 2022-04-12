@@ -1,1 +1,4 @@
 git clone https://github.com/hmneto/DEV.git && cd DEV && cd not && cd Servidor-master && docker-compose up -d --build
+
+
+git pull && docker-compose up -d --build

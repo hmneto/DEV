@@ -1,17 +1,10 @@
-version: '3'
+version: '3.3'
 services:
-  blazor:
-    container_name: blazor
-    working_dir: /app/Servidor/Server
-    build: .
-    depends_on: 
-      - db
-    command: dotnet run
-    restart: always
-    ports:
-      - 80:5000
+
 
   db:
+    networks:
+        - application
     ports:
       - 3306:3306
     container_name: db
@@ -26,9 +19,29 @@ services:
       MYSQL_DATABASE: xxxxx
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
+      
+  blazor:
+    networks:
+        - application
+    container_name: blazor
+    working_dir: /app/Servidor/Server
+    build: .
+    command: ["./waitforit.sh", "db:3306", "--", "sh", "run.sh"] # <-- look here!
+    depends_on: 
+      - db
+    command: dotnet ef migrations add Initial
+    restart: always
+    ports:
+      - 80:5000
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 85:8080
+
+    networks:
+      - application
+
+networks:
+  application:

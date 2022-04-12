@@ -1,0 +1,11 @@
+version: "3"
+services:
+  webpack:
+    container_name: react_container
+    build: .
+    ports:
+      - 80:3000
+    # volumes:
+    #   - ./build:/app/new
+    image: react_container
+    working_dir: /app

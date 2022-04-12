@@ -1,0 +1,3 @@
+git clone https://github.com/hmneto/DEV.git && cd DEV && cd dockerized-react-app-master && docker-compose up -d --build 
+
+&& docker exec -it react_container sh

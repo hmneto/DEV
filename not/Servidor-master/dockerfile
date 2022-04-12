@@ -4,4 +4,6 @@ RUN dotnet tool install --global dotnet-ef
 ENV PATH="${PATH}:~/.dotnet/tools"
 COPY ./ .
 WORKDIR /app/Servidor/Server
+# RUN dotnet ef migrations add Initial
 RUN dotnet build
+RUN dotnet run

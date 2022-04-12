@@ -5,10 +5,10 @@ const path = require('path')
 
 
 app.get('/', function(a,b){
-    fs.readFile(path.resolve('./aula4.html'), function(err, data){
+    fs.readFile(path.resolve('./index.html'), function(err, data){
+        console.log(data.toString())
         b.send(data.toString())
-    })
-    
+    })   
 })
 
 
@@ -18,4 +18,6 @@ app.get('/bundle.js', function(a,b){
     })
 })
 
-app.listen(80)
+app.listen(80, function(){
+    console.log('servidor rodando')
+})
