@@ -17,7 +17,7 @@ namespace APP
         }
 
 
-        public void ApiRequest(object sender, EventArgs args)
+        public async void ApiRequest(object sender, EventArgs args)
         {
 
             using (var client = new HttpClient())
@@ -27,8 +27,8 @@ namespace APP
                 {
                     var uri = "http://10.0.2.2:29187/teste/Get";
                     //var uri = "http://192.168.1.1:5102/Teste";
-                    var result = client.GetStringAsync(uri);
-                    Console.WriteLine(result.Result);
+                    string result = await client.GetStringAsync(uri);
+                    Console.WriteLine(result);
                 }
                 catch (Exception e)
                 {
