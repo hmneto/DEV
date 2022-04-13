@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP.MainPage">
+
+    <AbsoluteLayout>
+
+
+        <Label Text="Uma empresa que já nasce rodada /n no melhor sentido da palavra"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+               
+           TextColor="White"
+              />
+
+        <Button Text="Click to Rotate Text!"
+     AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+   AbsoluteLayout.LayoutFlags="PositionProportional"
+   Clicked="ApiRequest"
+                />
+
+    </AbsoluteLayout>
+
+</ContentPage>
