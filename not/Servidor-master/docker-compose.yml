@@ -20,19 +20,19 @@ services:
       MYSQL_USER: xxxx
       MYSQL_PASSWORD: xxxx
       
-  # blazor:
-  #   networks:
-  #       - application
-  #   container_name: blazor
-  #   working_dir: /app/Servidor/Server
-  #   build: .
-  #   command: ["./waitforit.sh", "db:3306", "--", "sh", "run.sh"] # <-- look here!
-  #   depends_on: 
-  #     - db
-  #   command: dotnet ef migrations add Initial
-  #   restart: always
-  #   ports:
-  #     - 80:5000
+  blazor:
+    networks:
+        - application
+    container_name: blazor
+    working_dir: /app/Servidor/Server
+    build: .
+    command: ["./waitforit.sh", "db:3306", "--", "sh", "run.sh"] # <-- look here!
+    depends_on: 
+      - db
+    command: dotnet ef migrations add Initial
+    restart: always
+    ports:
+      - 80:5000
 
   adminer:
     image: adminer
