@@ -1,1 +1,1 @@
-git clone https://github.com/hmneto/DEV.git && cd DEV && cd ATOMIC_REACT_PATTERN && docker-compose up -d --build
+git clone https://github.com/hmneto/DEV.git && cd DEV && cd docker/ATOMIC_REACT_PATTERN && docker-compose up -d --build
