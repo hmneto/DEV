@@ -1,0 +1,1 @@
+git clone https://github.com/hmneto/c-sharp && cd /root/c-sharp/xamarin/AppLocalizaSolucao && sudo docker-compose up -d --build
