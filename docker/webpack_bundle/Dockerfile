@@ -1,9 +1,7 @@
 
 FROM ubuntu:latest
-RUN apt-get update 
-
-
-RUN apt-get install -y curl 
+RUN apt-get update && apt-get install -y /
+    curl 
 
 ENV NODE_VERSION=12.6.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
