@@ -1,0 +1,28 @@
+version: "3"
+services:
+  sqlserver:
+    restart: always
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5435:8080
+      
+  web:
+    restart: always
+    working_dir: /app
+    command: dotnet run
+    depends_on:
+      - sqlserver
+    build:  
+      context: ./AppLocalizaServer/AppLocalizaServer
+    ports: 
+      - 80:5000
