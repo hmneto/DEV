@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vqrHUcxu9T0bu5rBDK0rkd38EfCh1oDcasj+08AJPuseAeb7+h5tV35rmD1n6BrArJ1s+XFBtBdl9m6E+5tnYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TI01\\Desktop\\codes\\c-sharp\\TipoPaginaXamarin\\TipoPaginaXamarin\\TipoPaginaXamarin.iOS\\TipoPaginaXamarin.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TI01\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}

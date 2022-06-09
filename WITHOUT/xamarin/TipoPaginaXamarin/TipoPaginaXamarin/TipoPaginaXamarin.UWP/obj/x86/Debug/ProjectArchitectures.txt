@@ -1,0 +1,1 @@
+C:\Users\TI01\Desktop\codes\c-sharp\TipoPaginaXamarin\TipoPaginaXamarin\TipoPaginaXamarin.UWP\TipoPaginaXamarin.UWP.csproj;x86
