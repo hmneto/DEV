@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  webpack:
+    build: .
+    volumes: 
+      - ./:/app
+      - /app/node_modules
+    command: yarn build
+    environment: 
+      NODE_ENV: okok

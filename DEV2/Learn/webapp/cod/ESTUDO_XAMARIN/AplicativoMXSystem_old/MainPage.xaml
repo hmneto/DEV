@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicativoMXSystem.MainPage">
+
+    <StackLayout>
+        <Button Text="Click me!" Clicked="HandleClick"/>
+        <Entry 
+            Text="" 
+            Placeholder="Enter a todo"
+            TextChanged="HandleTextChanged"
+            Completed="HandleEnterPress"
+            x:Name="inputField"
+        />
+
+        <StackLayout x:Name="TodoList">
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista Estoque</title>
+    <style>
+        #button {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/lista-estoque/">voltar</a>
+    <hr>
+    <!-- ID: <span id="id"></span><br> -->
+    <form action="/imagem/" method="POST" enctype="multipart/form-data">
+        <input id="id_da_peca" type="hidden" name="id_da_peca">
+        <p>
+            <h4>Foto que será anexada: <input type="file" name="imagem"></h4>
+        </p>
+
+        <button type="submit" id="button">
+            ENVIAR
+        </button>
+    </form>
+    <hr>
+    Id: <span id="id"></span><br>
+    Preco:<span id="preco"></span><br>
+    Porcentagem:<span id="porcentagem"></span><br>
+    Valor venda: <span id="vendaValor"></span><br>
+
+    <!-- CUSTO TOTAL:<span id="CUSTO_TOTAL"></span><br>
+    VALOR DE VENDA:<span id="VALOR_DE_VENDA"></span><br> -->
+    <hr>
+
+    <p>
+        <h3>Nome da Peça: <span id="nome_da_peca"> </span></h3>
+    </p>
+    <p>
+        <h3>
+            Quantidade: <span id="quantidade"> </span>
+        </h3>
+    </p>
+
+    <button id="apagar">apagar</button>
+
+    <button id="editar">Editar</button>
+
+    <div id="imagens"></div>
+
+    <script src="dist/bundle.js">
+
+    </script>
+</body>
+
+</html>

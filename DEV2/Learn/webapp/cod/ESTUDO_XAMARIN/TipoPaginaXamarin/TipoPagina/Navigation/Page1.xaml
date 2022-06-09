@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipoPaginaXamarin.TipoPagina.Navigation.Page1"
+             Title="Titulo da Navigationgggggg"
+             xmlns:local="clr-namespace:TipoPaginaXamarin">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="pesquisa" IconImageSource="{local:ImageResource TipoPaginaXamarin.images.xamarin.png}"/>
+        <ToolbarItem Text="detalhes" IconImageSource="{local:ImageResource TipoPaginaXamarin.images.Page.png}"/>
+        <ToolbarItem Text="ordenar" IconImageSource="{local:ImageResource TipoPaginaXamarin.images.play.png}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Pagina 1"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Ir para Página 2" Clicked="mudaPagina22"/>
+        </StackLayout>
+                   
+    </ContentPage.Content>
+</ContentPage>

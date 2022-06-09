@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="06 - Tipos de dados básicos ao complexos">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="VMBDCTI0050:CTI\wolney">
+          <Created>2018-12-03T15:33:47.4019253-02:00</Created>
+          <Type>SQL</Type>
+          <Server>VMBDCTI0050</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Caracteres.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:VMBDCTI0050:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>VMBDCTI0050</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01 - Caracteres.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Numéricos.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:VMBDCTI0050:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>VMBDCTI0050</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02 - Numéricos.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Data e hora.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:VMBDCTI0050:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>VMBDCTI0050</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03 - Data e hora.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - XML.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:VMBDCTI0050:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>VMBDCTI0050</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04 - XML.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Tabela.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:VMBDCTI0050:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>VMBDCTI0050</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - Tabela.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

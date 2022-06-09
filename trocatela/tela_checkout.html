@@ -1,0 +1,148 @@
+<div id="tela_checkout" class="transition-2">
+  <div class="row">
+    <div class="col-md-1 mt-5"></div>
+
+    <div class="col-md-6 mt-5">
+      <img id="logo" src="imagens/logo.png" />
+    </div>
+
+    <div class="col-md-2 mt-5">
+      <a href="http://sistema.mxlog.com.br/login"><button class="btn btnTema2">Fazer login</button></a>
+    </div>
+
+    <div class="col-md-2 mt-5">
+      <button class="btn btnTema1"
+      onclick="trocaTela({ Content: 'tela_cadastro' });"
+      >Cadastre-se</button>
+    </div>
+  </div>
+
+
+  <div class="col-md-12 col py-3 px-lg-3"></div>
+  <div class="col-md-12 col py-3 px-lg-3"></div>
+  <div class="col-md-12 col py-3 px-lg-3"></div>
+
+  <div id="topo">
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-5 text-light">
+        <h2>Resumo</h2>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-3 off_white">
+        <p style="line-height: 1.2;">
+          Revise as informações do seu pedido ou adicione mais endereços antes
+          de finalizar.
+        </p>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-5 off_white">
+        <label class="form-inline labelInput">Ponto A</label>
+        <input
+          class="form-control text_roxo"
+          readonly
+          value="Rua Dinamarca, 3000 - Taboão, SBC"
+        />
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-5 off_white">
+        <label class="form-inline labelInput">Ponto B</label>
+        <input
+          class="form-control text_roxo"
+          readonly
+          value="Av. Humberto de Alencar Castelo Branco, 1260 - jd. Santo Ignácio, SBC"
+        />
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-2">
+        <button
+          class="btn btnTema2 mt-3"
+          onclick="trocaTela({ Content: 'tela_adicionar_rota' })"
+        >
+          + Adicionar endereços
+        </button>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
+
+
+
+    <div class="row mt-5">
+      <div class="col-md-5"></div>
+      <div class="col-md-3 text-light">
+        <span>Tempo estimado do serviço</span>
+      </div>
+      <div class="col-md-2 text-light text-right">
+        <span class="font-weight-bold">10 min</span>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col-md-5"></div>
+      <div class="col-md-3 text-light">
+        <span>Total estimado a pagar</span>
+      </div>
+      <div class="col-md-2 text-light text-right">
+        <span class="font-weight-bold">R$ 25,40 reais</span>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-8"></div>
+
+      <div class="col-md-2 text-light">
+        <button
+          class="btn btnTema3 mt-2 pt-2 pb-2"
+          style="font-size: 20px;"
+          onclick="trocaTela({Content:'tela_triagem_login_cadastro'})"
+        >
+          Solicitar entrega
+        </button>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+
+    <div class="col-md-12 col py-3 px-lg-3"></div>
+
+    <div class="col-md-12 col py-3 px-lg-3"></div>
+    <div class="col-md-12 col py-3 px-lg-3"></div>
+
+    <footer class="bg-light text-center text-lg-start">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mb-12 mb-md-0">
+            <img id="logo-rodape" class="mb-3"  src="imagens/logo-rodape.png" />
+
+            <p>
+              MXLOG Serviços de Logística EIRELI- ME | 2021 | Todos os direitos
+              reservados | Desenvolvido por MXLOG
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

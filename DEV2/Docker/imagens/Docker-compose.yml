@@ -1,0 +1,7 @@
+version: "3"
+services:
+  upload:
+    build: .
+    restart: always
+    ports: 
+      - "80:3000"

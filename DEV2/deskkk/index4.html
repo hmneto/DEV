@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Make iFrame Height Dynamic Based on Content Inside Using Java</title>
+<style>
+    iframe{
+        width: 100%;
+        border: 2px solid #ccc;
+    }
+</style>
+</head>
+<body>
+    <iframe src="/examples/html/table-layout.php" class="myIframe">
+  </iframe>
+    
+     <iframe src="/examples/html/table-layout.php" class="myIframe">
+  </iframe>
+    
+  
+	<>
+    // Selecting the iframe element
+    var iframe = document.getElementsByClassName("myIframe");
+      
+      for(i=0;i<iframe.length;i++){
+		console.log(iframe[i])
+        
+            iframe[i].onload = function(){
+        iframe[i].style.height =iframe[i].contentWindow.document.body.scrollHeight + 'px';
+    }
+      }
+	
+    // Adjusting the iframe height onload event
+
+	</>
+</body>
+</html>                            
+

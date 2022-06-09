@@ -1,0 +1,483 @@
+
+m2y6bvMEkls - SENHA BANCO
+------------------------------------------------------
+select DATEADD(YEAR,-7,getdate()) - MENOS  7  DIAS
+-------------------------- 
+SELECT NEWID( )   GERAR ID ALEATORIO
+--------------------------------------
+create database treino2021
+go
+use treino2021
+go
+
+create TABLE Livro 
+(
+	IdLivro INT primary key identity,
+	Nome Varchar(50) not null,
+	DataCadastro Datetime default(getdate()),
+	IdAutor tinyint not null,
+	IdEditora tinyint not null,
+	IdGenero  tinyint not null,
+	QuantidadePaginas int not null,
+	Classificacao int not null,
+	CONSTRAINT fkLivroParaAutor FOREIGN KEY(IdAutor) references Autor(IdAutor),
+	CONSTRAINT fkLivroParaEditora FOREIGN KEY(IdEditora) references Editora(IdEditora),
+	CONSTRAINT fkLivroParaGenero FOREIGN KEY(IdGenero) references Genero(IdGenero)
+);
+insert into Livro (Nome, IdAutor, IdEditora, IdGenero, QuantidadePaginas, Classificacao)
+values ( 'Pele', 1,2,3,533,5),
+( 'a lua', 2,2,2,563,5),
+( 'rosa e a agua', 3,3,3,120,2),
+( 'fotossintese', 4,2,3,422,5),
+( 'a lua', 2,1,1,563,5),
+( 'rosa e a agua', 1,1,3,120,2),
+( 'cosmos', 3,2,1,422,5)
+
+
+select * from Livro
+--Autor
+create TABLE Autor
+(
+	IdAutor tinyint primary key,
+	Nome varchar(50) not null,
+	IdLocalNascimento tinyint not null,
+	CONSTRAINT fkAutorParaNacionalidade FOREIGN KEY(IdLocalNascimento) references LocalNascimento(IdLocalNascimento)
+)
+insert into Autor 
+(IdAutor, Nome, IdLocalNascimento)
+values 
+(1, 'beto', 1),
+(2, 'filipe',1 ),
+(3, 'chaves',2 ),
+(4, 'maria',3 ),
+(5, 'cassila',2 )
+--nascimento
+CREATE TABLE LocalNascimento(
+	IdLocalNascimento tinyint primary key,
+	Endereco varchar(50) not null,
+	Cidade varchar(50) not null,
+	Estado char(2) not null,
+	Pais varchar(50)
+)
+insert into LocalNascimento(IdLocalNascimento,Endereco,Cidade, Estado, Pais )
+values (1,'rua nelson Herling 23', 'sao paulo','sp','Brasil'),
+(2,'Emílio Ruas ', 'Manus','am','Brasil'),
+(3,'Visc. de Pirajá 199', 'Rio de Janeiro','RJ','Brasil')
+
+-- EDITORA
+create TABLE Editora
+(
+	IdEditora tinyint primary key,
+	Nome varchar(50) not null,
+	Endereco varchar (50), 
+)
+select * from Editora
+insert into Editora (IdEditora,Nome, Endereco)
+values
+(1,'Editora Atica', 'av. Paulista 902 - São Paulo'),
+(2,'Editora Abril', 'av. Mineira 902 - Minas'),
+(3,'Editora 9 Julho', 'av. Das flores 902 - Pará')
+
+-- GENERO
+CREATE TABLE Genero
+(
+	IdGenero tinyint primary key,
+	TipoGenero varchar(50) not null,
+)
+insert into Genero (IdGenero,TipoGenero)
+values (1,'romance'),
+(2,'terror'),
+(3,'aventura'),
+(4,'comedia'),
+(5,'drama'),
+(7,'biografia')
+select Livro.Nome , Livro.DataCadastro, Livro.QuantidadePaginas, Autor.Nome, Editora.Nome, LocalNascimento.Pais, Genero.Genero
+ from  Livro
+ INNER JOIN Autor  on 
+ Autor.IdAutor = Livro.IdAutor
+ INNER JOIN Editora on
+ Editora.IdEditora = Livro.IdEditora
+ INNER JOIN LocalNascimento on
+ LocalNascimento.IdLocalNascimento = Autor.IdLocalNascimento
+ INNER JOIN Genero on
+ Genero.IdGenero = Livro.IdGenero
+ 
+ 
+UPDATE Livro 
+SET NOME = ' A Lua'
+WHERE IdLivro = 2
+
+select * from Livro
+
+
+create procedure teste
+as
+select 'Pele' as nome
+exec teste
+
+---------------
+create procedure Nome_livro
+as 
+select nome, classificacao
+from Livro
+
+exec sp_helptext Nome_livro
+
+---------------------------------------
+
+create table celular (
+ Idcelular tinyint primary key identity(1,1),
+ IdMarca tinyint not null,
+ IdCor tinyint not null,
+ Modelo varchar(50),
+ Valor float(2) not null,
+ constraint fkcelularForMarca foreign key (idMarca) references Marca(IdMarca),
+ constraint fkcelularForCor foreign key (IdCor) references Cor(IdCor),
+)
+
+create table CorCelular(
+IdCor tinyint primary key identity(1,1),
+NomeCor varchar (44)
+)
+
+create table Marca(
+idMarca tinyint primary key identity(1,1),
+NomeMarca varchar(50) not null,
+IdEmpresa tinyint  not null,
+constraint fkMarcaForEmpresa foreign key (IdEmpresa) references Empresa(IdEmpresa)
+)
+
+create table Empresa(
+IdEmpresa tinyint primary key identity(1,1),
+NomeEmpresa varchar (50),
+Pais varchar(50),
+)
+select celular.modelo, celular.valor, CorCelular.NomeCor, Marca.NomeMarca, Empresa.Pais, empresa.NomeEmpresa 
+ from celular
+ INNER JOIN CorCelular on 
+ celular.IdCor = CorCelular.IdCor
+ INNER JOIN Marca on
+ celular.idMarca  = marca.idMarca
+ INNER JOIN empresa on
+ marca.IdEmpresa = empresa.IdEmpresa
+--- ----------------------------------------------
+ALTER PROCEDURE USP_INSERIR_REGISTRO_LIVRO
+@NOME AS VARCHAR(50),
+@QUANTIDADE AS INT
+AS
+BEGIN
+	BEGIN
+		IF @NOME IS NULL
+		BEGIN
+			SELECT 'PREENCHA O CAMPO NOME'
+			RETURN
+		END
+	END
+	INSERT INTO 
+		LIVROS(NOME,QUANTIDADE)
+	VALUES
+		@NOME,@QUANTIDADE
+END
+
+EXEC USP_INSERIR_REGISTRO_LIVRO 1,'FABIO'
+
+---------------------------------------------------------
+SELECT
+-----------------------------------------------
+------INSERT EDITORA
+CREATE PROCEDURE USP_INSERIREDITORA
+@ID_EDITORA int,
+@NOME_EDITORA VARCHAR(50),
+@ENDERECO_EDITORA VARCHAR(50)
+AS
+BEGIN
+	BEGIN
+	IF @NOME_EDITORA IS NULL OR @ENDERECO_EDITORA IS NULL
+		BEGIN
+			SELECT 'PREENCHA OS CAMPOS'
+			RETURN
+		END
+	END
+	INSERT INTO 
+		Editora(IdEditora,Nome,Endereco)
+	VALUES
+		(@ID_EDITORA,@NOME_EDITORA, @ENDERECO_EDITORA)
+END
+
+EXEC USP_INSERIREDITORA  5,'editora mxlog',' rua c 235'
+select * from editora
+GO
+
+----------------------------
+------------- INSERT LIVRO 
+CREATE PROCEDURE USP_INSERIRLIVRO
+@NOME_LIVRO VARCHAR(MAX),
+@ID_AUTOR TINYINT,
+@ID_EDITORA TINYINT,
+@ID_GENERO TINYINT,
+@QUANTIDADE_PAGINAS INT,
+@CLASSIFICACAO INT
+AS
+BEGIN 
+	BEGIN
+		IF @NOME_LIVRO IS NULL OR @ID_AUTOR IS NULL OR @ID_EDITORA IS NULL OR  @ID_GENERO IS NULL
+			BEGIN 
+					SELECT 'VOCE DEIXOU UM CAMPO VAZIO. REVISE AS INFORMAÇÕES INSERIDAS '
+					RETURN
+			END
+	END
+		INSERT INTO 
+		LIVRO(NOME,DATACADASTRO, idautor, ideditora, idgenero, quantidadepaginas, classificacao) 
+	VALUES		
+ (@NOME_LIVRO, GETDATE(), @ID_AUTOR , @ID_EDITORA , @ID_GENERO , @QUANTIDADE_PAGINAS , @CLASSIFICACAO) 
+	END
+
+	EXEC  USP_INSERIRLIVRO 'o urso e a menina',   1, 3, 3, 56, 5
+	go
+-----------------------------
+-- SELECT LIVRO
+
+CREATE PROCEDURE USP_SELECTLIVROAUTOR
+@AUTOR INT
+AS
+BEGIN
+SELECT * FROM LIVRO WHERE LIVRO.IdAutor = @AUTOR
+END
+
+EXEC USP_SELECTLIVROAUTOR 3
+Go
+----------------------------
+---------------SELECTEDITORA
+CREATE PROCEDURE USP_SELECTEDITORA
+@ID_EDITORA INT
+AS
+BEGIN
+SELECT  LIVRO.NOME, EDITORA.NOME, EDITORA.ENDERECO
+FROM LIVRO
+INNER JOIN EDITORA ON
+Editora.IdEditora = Livro.IdEditora
+WHERE LIVRO.IdEditora = @ID_EDITORA
+END
+
+SELECT * FROM Editora
+EXEC USP_SELECTEDITORA 1
+GO
+
+-----------------------------------
+--update classificacao 2 
+
+CREATE PROCEDURE USP_UPDATECLASSIFICACAO
+@id_livro int,
+@NOVA_CLASSIFICACAO INT
+AS
+BEGIN
+UPDATE Livro 
+SET	CLASSIFICACAO = @NOVA_CLASSIFICACAO
+WHERE 
+idlivro = @id_livro
+END
+
+EXEC USP_UPDATECLASSIFICACAO 8,-6
+select * from Livro
+go
+------------------------------------
+-- Delete
+CREATE PROCEDURE USP_DELETELIVRO2
+@ID_livro int
+AS
+BEGIN	
+	DELETE FROM 
+		LIVRO
+	WHERE
+		IdLivro =  @ID_livro
+END
+
+EXEC USP_DELETELIVRO2 7
+select * from livro
+GO
+--------------------------------------
+----------incluir alterar ou excluir
+ALTER PROCEDURE USP_LIVRO
+@ID_LIVRO INT ,
+@NOME_LIVRO VARCHAR(MAX) = 'nome' ,
+@ID_AUTOR TINYINT = 0,
+@ID_EDITORA TINYINT  =0,
+@ID_GENERO TINYINT =0,
+@QUANTIDADE_PAGINAS INT = 0,
+@CLASSIFICACAO INT =0 
+AS
+BEGIN
+---INCLUIR
+IF @ID_LIVRO  = 0 
+	BEGIN
+	    INSERT INTO 
+		 LIVRO(NOME, idautor, ideditora, idgenero, quantidadepaginas, classificacao) 
+		 VALUES		
+		 (@NOME_LIVRO,  @ID_AUTOR , @ID_EDITORA , @ID_GENERO , @QUANTIDADE_PAGINAS , @CLASSIFICACAO) 
+	END
+--ALTERAR
+	IF @ID_LIVRO != 0 and @NOME_LIVRO != NULL
+	BEGIN 
+			UPDATE Livro 
+			SET	NOME = @NOME_LIVRO,
+					IDAUTOR = @ID_AUTOR,
+					IDEDITORA = @ID_EDITORA,
+					IDGENERO = @ID_GENERO,
+					QUANTIDADEPAGINAS = @QUANTIDADE_PAGINAS,
+					CLASSIFICACAO = @CLASSIFICACAO
+			WHERE 
+			idlivro = @id_livro
+	END
+
+----EXLUIR
+	IF @ID_LIVRO > 0 
+	BEGIN
+		DELETE FROM 
+		LIVRO
+	WHERE
+		IdLivro =  @ID_livro
+	END	
+END
+GO	  
+--INCLUIR
+EXEC USP_LIVRO 0, 'livro do filipe ', 1,3, 5, 180, 5
+---DELETE 
+EXEC  USP_LIVRO 18
+--ALTERAR
+EXEC  USP_LIVRO 11,'treze', 3, 2, 3, 1500, 100 
+
+select * from livro
+------------------------------------------------------
+ select livro.nome, livro.DataCadastro, autor.Nome, editora.Nome, genero.Genero
+ from livro
+ inner join autor on
+ livro.IdAutor = autor.IdAutor
+ inner join editora on
+ livro.IdEditora = Editora.IdEditora
+ inner join genero on
+ livro.IdGenero = genero.IdGenero
+
+------------------------------------------------------------------------------
+SELECT 
+	C.S_DSC_FANTASIA AS CLIENTE,
+	U.S_DSC_NOME AS UNIDADE
+FROM	
+	TBL_CLIENTE AS C INNER JOIN	TBL_CLIENTE_CONTATOS AS CO ON
+		C.N_CD_CODIGO = CO.N_CD_CODIGO
+	AND C.N_CD_FILIAL = CO.N_CD_FILIAL INNER JOIN
+	TBL_UNIDADE AS U ON
+		C.N_CD_FILIAL = U.N_CD_EMPRESA
+	WHERE	
+	C.S_DSC_STATUS = 'A'
+
+	  SELECT TOP 1000
+	CLIENTE.S_DSC_FANTASIA AS NOME,
+	U.S_DSC_NOME AS NOME,
+	TBL_USUARIO.S_DSC_USUARIO
+
+FROM
+	TBL_CLIENTE AS CLIENTE INNER JOIN TBL_UNIDADE U ON
+	CLIENTE.N_CD_FILIAL = U.N_CD_EMPRESA
+	INNER JOIN  TBL_USUARIO ON 
+	CLIENTE.N_CD_FILIAL_ALT = TBL_USUARIO.N_CD_CODUSER
+	WHERE CLIENTE.S_DSC_STATUS ='A'
+
+------------------------------------------
+select S_DSC_FANTASIA, unidade.S_DSC_NOME, empresa.S_DSC_RAZAO  from TBL_UNIDADE as unidade
+inner join tbl_cliente as cliente on
+unidade.N_CD_EMPRESA = cliente.N_CD_FILIAL
+INNER JOIN TBL_EMPRESA AS empresa ON
+empresa.N_CD_EMPRESA = cliente.N_CD_EMPRESA
+where cliente.S_DSC_STATUS = 'A'
+order by cliente.S_DSC_FANTASIA
+
+-----------------------
+
+CREATE TABLE JOGOS(
+IDJOGO TINYINT PRIMARY KEY IDENTITY(1,1),
+IDTIME_ANFITRIAO TINYINT NOT NULL,
+IDTIME_VISITANTE TINYINT NOT NULL,
+DATAJOGO DATETIME NOT NULL,
+PONTOSTIME1 INT NOT NULL,
+PONTOSTIME2 INT NOT NULL,
+RESULTADO VARCHAR(6)
+CONSTRAINT FK_JOGOS_PARA_TIME FOREIGN KEY (IDTIME_ANFITRIAO) REFERENCES TIMES(IDTIME),
+CONSTRAINT FK_JOGOS_PARA_TIME2 FOREIGN KEY ( IDTIME_VISITANTE) REFERENCES TIMES(IDTIME),
+)
+alter procedure USP_JOGOS
+@idanfitriao int, 
+@idvisitante int,
+@datajogo datetime,
+@pontos1 int,
+@pontos2 int,
+@resultado varchar(max)
+as
+begin
+insert into JOGOS values
+(@idanfitriao, @idvisitante,@datajogo, @pontos1, @pontos2,
+ (select cast(@pontos1 as varchar)+'x'))
+end USP_JOGOS 1,2,'1/07/2021',2,0,
+exec 
+
+
+CREATE TABLE TIMES(
+IDTIME TINYINT PRIMARY KEY IDENTITY(1,1),
+NOME_TIME VARCHAR(50) NOT NULL,
+PONTOSNALIGA INT NOT NULL,
+DERROTAS INT NOT NULL,
+VITORIAS INT NOT NULL,
+IDESTADO INT NOT NULL,
+CONSTRAINT FK_TIMES_ESTADO FOREIGN KEY (IDESTADO) REFERENCES ESTADO(IDESTADO)
+)
+CREATE PROCEDURE USP_INSERTIMES
+@NOME_TIME VARCHAR(50) ,
+@PONTOSNALIGA INT ,
+@DERROTAS INT,
+@VITORIAS INT ,
+@IDESTADO INT
+AS
+BEGIN 
+		INSERT INTO TIMES VALUES 
+		(@NOME_TIME, @PONTOSNALIGA, @DERROTAS, @VITORIAS, @IDESTADO )
+END 
+USP_INSERTIMES 'vasco',0,0,0,3
+GO
+
+
+SELECT * FROM TIMES
+CREATE TABLE ESTADO(
+IDESTADO TINYINT PRIMARY KEY IDENTITY(1,1),
+NOME_ESTADO VARCHAR(55),
+PAIS VARCHAR(3)
+)
+CREATE PROCEDURE USP_INSERT_ESTADO
+@NOMEESTADO VARCHAR(50),
+@NOMEPAIS VARCHAR (50)
+AS
+BEGIN
+	INSERT INTO ESTADO
+	VALUES (@NOMEESTADO, @NOMEPAIS)
+END
+EXEC USP_INSERT_ESTADO 'AMAZONAS', 'BR'
+SELECT * FROM ESTADO
+
+-------------------------------------------------------------
+==========================================================09:01 08/01/2021
+
+USE SGI_HOMOLOGA
+GO
+SELECT   SUM(N_DSC_VALORSERVICO)
+FROM TBL_CHAMADOS AS C
+WHERE C.S_DSC_DTSOLI LIKE '%2021/01%'
+and c.s_dsc_func LIKE '%EVERSON%'
+
+SELECT   SUM(N_DSC_VALORSERVICO)
+  FROM  TBL_CHAMADOS AS C
+WHERE C.S_DSC_DTSOLI LIKE '%2021/01%'
+and c.s_dsc_func LIKE '%PARCEIRO CARGAS%'
+
+SELECT SUM(N_DSC_VALORSERVICO) FROM TBL_CHAMADOS AS C
+WHERE C.S_DSC_DTSOLI LIKE '%2021/01%'
+and c.s_dsc_func LIKE '%RAFAEL SILVA%'
+-----------------------------------------------------
+

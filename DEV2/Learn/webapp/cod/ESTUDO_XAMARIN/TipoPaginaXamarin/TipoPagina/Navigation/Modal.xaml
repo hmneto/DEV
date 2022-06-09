@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipoPaginaXamarin.TipoPagina.Navigation.Modal"
+             Title="Titulo Modal">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightSkyBlue">
+            <StackLayout HeightRequest="50" BackgroundColor="LightBlue">
+                <Label Text="Eu sou o título"/>
+                <Button Text="X" Clicked="FecharModal"/>
+            </StackLayout>
+
+        <Label Text="Eu sou um moda"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Ir para Página 1"
+                    Clicked="MudarParaPagina"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

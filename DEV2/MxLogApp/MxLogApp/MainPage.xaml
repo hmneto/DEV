@@ -1,0 +1,26 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MxLogApp.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}"
+             xmlns:imagem="clr-namespace:MxLogApp">
+
+  <AbsoluteLayout>
+    <Image Source="{imagem:ImageResource MxLogApp.Resources.Images.deliveryurbano.jpg}"
+           Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1"
+           AbsoluteLayout.LayoutFlags="All" />
+
+    <Label Text="Uma empresa que já nasce rodada /n no melhor sentido da palavra"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+               
+           TextColor="White"
+              />
+
+    <Button Text="Click to Rotate Text!"
+     AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+   AbsoluteLayout.LayoutFlags="PositionProportional"
+   Clicked="ApiRequest"
+                />
+
+  </AbsoluteLayout>
+</ContentPage>

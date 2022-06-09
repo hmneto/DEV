@@ -1,0 +1,215 @@
+               // <div className="wrapper fadeInDown">  
+            //     <div id="formContent">
+                
+            //         {/* <div className="fadeIn first">
+            //     <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+            //   </div> */}
+
+            //         <div>
+            //             <input
+            //                 type="text"
+            //                 id="login"
+            //                 className=""
+            //                 name="login"
+            //                 placeholder="login"
+            //                 onChange={event =>
+            //                     this.setState({
+            //                         login: event.currentTarget.value
+            //                     })
+            //                 }
+            //             />
+            //             <input
+            //                 type="password"
+            //                 id="password"
+            //                 className="fadeIn third"
+            //                 name="login"
+            //                 placeholder="password"
+            //                 onChange={event =>
+            //                     this.setState({
+            //                         senha: event.currentTarget.value
+            //                     })
+            //                 }
+            //             />
+            //             <input
+            //                 type="submit"
+            //                 className="fadeIn fourth"
+            //                 value="Log In"
+            //                 onClick={() => this.props.login(this.state)}
+            //             />
+            //         </div>
+
+            //         <div id="formFooter">
+            //     <Link className="underlineHover" to="/cadastro">Cadastro</Link>
+            //   </div>
+            //     </div>
+            // </div>
+
+
+
+{/* <div className="container">
+  <div className="form-group">
+    <label htmlFor="exampleInputEmail1">Endereço Email</label>
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu Email" onChange={event =>
+                                this.setState({
+                                    login: event.currentTarget.value
+                                })
+                            }/>
+    <small id="emailHelp" className="form-text text-muted">Não vamos compartilhar o seu email.</small>
+  </div>
+  <div className="form-group">
+    <label htmlFor="exampleInputPassword1">Senha</label>
+    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Senha" />
+  </div>
+  <div className="form-check">
+    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" className="btn btn-primary">Entrar</button>
+</div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div>
+                <Link to="/">Voltar</Link>
+                <div className="form-group">
+                    <label htmlFor="exampleInputEmail1">
+                        Endereço de email
+                    </label>
+                    <input
+                        type="email"
+                        className="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Seu email"
+                        onChange={e =>
+                            this.setState({ email: e.currentTarget.value })
+                        }
+                    />
+                    {/* <small id="emailHelp" className="form-text text-muted">
+                        Nunca vamos compartilhar seu email, com ninguém.
+                    </small> */}
+                </div>
+                <div className="form-group">
+                    <label htmlFor="exampleInputPassword1">Senha</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                        placeholder="Senha"
+                        onChange={e =>
+                            this.setState({ senha: e.currentTarget.value })
+                        }
+                    />
+                </div>
+                {/* <div className="form-group form-check">
+                    <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id="exampleCheck1"
+                    />
+                    <label className="form-check-label" htmlFor="exampleCheck1">
+                        Clique em mim
+                    </label>
+                </div> */}
+                <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={this.cadastro}
+                >
+                    Enviar
+                </button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div>
+                <Link to="/"><button type="button" className="btn btn-secondary">
+                            voltar
+                        </button></Link>
+                <input
+                    type="text"
+                    onChange={a => this.setState({ fluxo: a.currentTarget.value })}
+                />
+                <input
+                    type="button"
+                    value="enviar"
+                    onClick={() =>
+                        fluxo_create(this.state).then(a =>{
+                            window.history.back()
+                        })
+                    }
+                    
+                />
+            </div>

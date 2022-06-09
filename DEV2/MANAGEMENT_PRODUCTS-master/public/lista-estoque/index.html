@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <a href="/">voltar</a>
+        <hr>
+        <form id="form" method="POST" action="/estoque/" enctype="multipart/form-data">
+            <p>
+                <h3>Quantidade: <input type="number" name="quantidade" min="1" max="9999" required /></h3>
+            </p>
+            <p>
+                <h3>Nome Da Peça: <input type="text" name="nome_da_peca" minlength="3" maxlength="100" required /></h3>
+            </p>
+            <p>
+                <h3>Preço: <input type="number" name="preco" step="0.01" min="1" max="9999" required></h3>
+            </p>
+            <p>
+                <h3>Porcentagem: <input type="number" name="porcentagem" step="0.01" min="1" max="999" required></h3>
+
+            </p>
+            <p>
+                <h3>Tamanho: <input type="text" name="tamanho" minlength="1" maxlength="6" required></h3>
+            </p>
+            <p>
+                <h3>Foto que será anexada: <input type="file" name="imagem" /></h3>
+            </p>
+
+            <button id="sub" style="background-color:green;">
+                ENVIAR
+            </button>
+        </form>
+        <hr>
+        <table id="tabela">
+            <tr>
+                <th>Id</th>
+                <th>Nome Da Peça</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

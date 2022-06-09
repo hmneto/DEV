@@ -1,0 +1,16 @@
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.exe
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.deps.json
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.runtimeconfig.json
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.runtimeconfig.dev.json
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.dll
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\ref\Validation.dll
+C:\Users\TI01\Desktop\codes\Validation\bin\Debug\net5.0\Validation.pdb
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.csproj.AssemblyReference.cache
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.AssemblyInfoInputs.cache
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.AssemblyInfo.cs
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.csproj.CoreCompileInputs.cache
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.dll
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\ref\Validation.dll
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.pdb
+C:\Users\TI01\Desktop\codes\Validation\obj\Debug\net5.0\Validation.genruntimeconfig.cache

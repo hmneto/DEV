@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.transition-2 {
+  opacity: 0.2;
+  transition: 0.5s ease-out;
+}
+
+.transition-2.is-active {
+  transition: 0.5s ease-in;
+  opacity: 1;
+}
+
+#tela_rota_retirada {
+  width: 100%;
+  height: 100%;
+  background: url("imagens/Fundo-Cerulean.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tela_adicionar_rota {
+  width: 100%;
+  height: 100%;
+  background: url("imagens/Fundo-Allports.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tela_checkout {
+  width: 100%;
+  height: 100%;
+  background: url("imagens/Fundo-Daintree.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tela_cadastro {
+  width: 100%;
+  height: 100%;
+  background: url("imagens/Fundo-Black.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#tela_conta_criada{
+  width: 100%;
+  height: 100%;
+  background: url("imagens/Fundo-Prussian-Blue.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#logo {
+  max-width: 25%;
+  height: auto;
+}
+
+
+#imagemTriagemlogin {
+  max-width: 80%;
+  height: auto;
+}
+
+#logo-rodape {
+  max-width: 10%;
+  height: auto;
+}
+
+footer {
+  height: 20%;
+}
+
+#tela_triagem_login_cadastro {
+  width: 100%;
+  height: 100%;
+  background-color: #eceee9;
+}
+
+footer#footerTriagem{
+  background-color: #4A58BA !important;
+}
+
+#destaque{
+  color: #4A58BA;
+}
+
+#imagemLoginSucss {
+  max-width: 80%;
+  height: auto;
+}
+
+.btnTema1{
+  background-color: #003755;
+  color: white;
+}
+
+.btnTema1:hover{
+background-color: #0068A1;
+}
+
+
+.btnTema1:focus{
+  background-color: #ECEEE9;
+  }
+
+.labelInput{
+  margin-bottom: -0.3%;
+  margin-top: 0.8%;
+}
+
+.spanPix{
+  margin-top: -5%;
+}
+
+.off_white{
+  color: #ECEEE9;
+}
+
+.btnTema2{
+  background-color: #D4D6C4;
+}
+
+
+.btnTema2:focus{
+  background-color: #00263B;
+  color: white;
+}
+
+
+.btnTema2:hover{
+  background-color: #003F61;
+  color: white;
+}
+
+
+.placeholder_roxo::placeholder {
+  color: #4A58BA;
+}
+
+
+.text_roxo {
+  color: #4A58BA;
+}
+
+
+.btnTema3{
+  background-color: #7C8399;
+  color: white;
+}
+
+.btnTema3:focus{
+  background-color: #ECEEE9;
+  color: #4A58BA;
+}
+
+.btnTema3:hover{
+  background-color: #4A58BA;
+  color: white;
+}

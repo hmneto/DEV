@@ -1,0 +1,131 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "136f97d6-336a-47f2-821d-e6d07a14d9a4",
+        "name": "FLUXO CAIXA"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "496e6b50-8ed5-4f5f-b80a-5f9f41e4f673",
+            "name": "Fluxo"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "type": "Text",
+                        "name": "id",
+                        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IjEi.MMpY0MJ_1fSoZGZ7VWzp18R6nSjycCJfVIhXIk64xa4"
+                      }
+                    ]
+                  },
+                  "bodyType": "Form"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "192.168.99.100",
+                  "path": "/fluxo/get_fluxo.php"
+                },
+                "id": "59438e86-a7b4-4847-9e19-9b1af340cfc0",
+                "name": "get fluxo",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "914d98b9-fece-4d9c-80dd-e0923de51cae",
+            "name": "Registro"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "type": "Text",
+                        "name": "id_fluxo",
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  "bodyType": "Form"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "192.168.99.100",
+                  "path": "/Registros/get_registro_by_id_usuario.php"
+                },
+                "id": "da30519b-f7b2-469d-a1c9-2964a58e3666",
+                "name": "Get by fluxo_id",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "78033839-0af2-4233-88af-ecf57a09639e",
+            "name": "Usuario"
+          }
+        }
+      ]
+    }
+  ]
+}

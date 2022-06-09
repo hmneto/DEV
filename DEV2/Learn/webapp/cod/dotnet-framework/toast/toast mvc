@@ -1,0 +1,80 @@
+
+
+function AtivaMsgLoad() {
+    notice = $.pnotify({
+        title: "Aguarde...",
+        text: '',
+        type: 'info',
+        icon: 'fa fa-spin fa-refresh',
+        history: false,
+        hide: false
+    });
+}
+
+function DesativaMsgLoad() {
+    notice.pnotify({
+        history: false,
+        hide: true,
+        delay: 10,
+        before_close: function (pnotify) {
+            before_close: null
+        }
+    });
+}
+
+function ResultSuccess(result) {
+    var descricaoMsg = result;
+    if (descricaoMsg == undefined) {
+        descricaoMsg = 'Ação executada com sucesso!';
+    }
+    notice.pnotify({
+        title: 'Sucesso',
+        text: descricaoMsg,
+        type: 'success',
+        icon: 'fa fa-check',
+        history: false,
+        hide: true,
+        delay: 1000,
+        before_close: function (pnotify) {
+            before_close: null
+        }
+    });
+}
+
+function ResultRoteiroFailure(msg) {
+    $.pnotify({
+        title: 'Atenção',
+        text: msg,
+        history: false,
+        hide: true,
+        delay: 800,
+        type: 'error'
+    });
+};
+
+function ResultRoteiroSuccess(msg) {
+    $.pnotify({
+        title: 'Atenção',
+        text: msg,
+        history: false,
+        hide: true,
+        delay: 800,
+        type: 'success'
+    });
+};
+
+function ResultRoteiroError(msg) {
+    notice.pnotify({
+        title: 'Atenção',
+        text: msg,
+        icon: '',
+        history: false,
+        hide: true,
+        delay: 800,
+        type: 'error'
+    });
+};
+
+
+
+

@@ -1,0 +1,27 @@
+version: '3'
+services:
+  blazor:
+    container_name: blazor
+    working_dir: /app/Servidor/Server
+    build: .
+    command: dotnet run
+    restart: always
+    ports:
+      - 80:5000
+    restart: always
+
+  sqlserver:
+    restart: always
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 85:8080

@@ -1,0 +1,33 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+
+class AtelieController extends AppController
+{
+    public function receve()
+    {
+        $myclass = new MyClass();
+        $myclass->receve($this,$this->Atelie);
+    }
+
+
+    public function send()
+    {
+        $myclass = new MyClass();
+        $myclass->send($this,$this->Atelie);
+    }
+
+    public function edit()
+    {
+        $myclass = new MyClass();
+        $myclass->edit($this,$this->Atelie);
+    }
+  
+
+    public function one()
+    {
+        $myclass = new MyClass();
+        $myclass->one($this,$this->Atelie);
+    }
+}

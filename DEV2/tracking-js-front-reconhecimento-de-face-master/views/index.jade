@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  video(id="video", width="320", height="240", preload=true, autoplay=true, loop=true, mute=true)
+  canvas(id="canvas", width="320", height="240")
+
+  script(src="tracking.js-master/build/tracking.js")
+  script(src="/tracking.js-master/build/data/face-min.js")
+  script(src="script.js")

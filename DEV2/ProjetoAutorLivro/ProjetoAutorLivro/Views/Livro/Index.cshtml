@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjetoAutorLivro.Models.Livro>
+
+<div class="row">
+    <a class="btn btn-success btn-lg" href="/Livro/Novo">Adicionar Livro</a>
+</div>
+<br>
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Data Cadastro</td>
+                <td>Editora</td>
+                <td>Paginas</td>
+                <td>id autor</td>
+                <td>Ações</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.DataCadastro</td>
+                    <td>@item.Editora</td>
+                    <td>@item.Paginas</td>
+                    <td>@item.Autor.Nome</td>
+                    @*<td>@item.IdLivro</td>*@
+                    <td>
+                        <a href="/Livro/Editar/@item.IdLivro" class="btn btn-default">Editar</a>
+                        <a href="/Livro/Remove/@item.IdLivro" class="btn btn-danger">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

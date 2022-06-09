@@ -1,0 +1,23 @@
+version: "3"
+services:
+  sqlserver:
+    restart: always
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
+    # build:
+    #   context: ./sql
+    #   dockerfile: Dockerfile
+    
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5435:8080
+      

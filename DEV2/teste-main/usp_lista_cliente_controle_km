@@ -1,0 +1,45 @@
+USE [METROPOLEEXT]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_lista_cliente_controle_km]    Script Date: 10/11/2021 14:09:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- Lista todos os cliente
+--exec [dbo].[usp_lista_cliente] 4
+
+ALTER PROCEDURE [dbo].[usp_lista_cliente_controle_km]
+
+AS
+DECLARE @ERRO AS VARCHAR(2000)
+SET NOCOUNT ON;
+BEGIN
+	BEGIN TRY
+		  
+			SELECT DISTINCT a.id_cliente
+				,a.[id_cliente_metropole]
+				,a.[nome_fantasia]
+				,b.nome as 'nome_unidade'
+				,a.[cnpj]
+				,a.[flag_ativo]
+			FROM tbl_cliente a
+			INNER JOIN dbo.tbl_unidade b on a.id_unidade = b.id_unidade inner join 
+			SGI..TBL_CONTRATO as contrato ON
+				contrato.N_CD_CLIENTE = a.id_cliente_metropole
+			 inner join 
+			SGI..TBL_CONTRATO_ITEM as item ON
+				item.N_CD_CODIGO = contrato.N_CD_CODCONTR inner join tbl_chamado as cha on cha.id_cliente = a.id_cliente inner join tbl_chamado_roteiro as rot on rot.id_chamado = cha.id_chamado
+			where 
+				a.flag_ativo = 1 and 
+				item.S_DSC_PGKM = 'S' and 
+				item.N_DSC_FRANQUIAKM_MENSAL >0 and
+				--item.S_DSC_STATUS = 'A' and
+				cha.data_cadastro>DATEADD(MONTH,-3,GETDATE()) and 
+				a.id_cliente not in (180,192,159,99,152)
+			order by a.nome_fantasia
+	   END TRY
+	   BEGIN CATCH
+	       SET @ERRO = ERROR_MESSAGE()
+		   PRINT @ERRO
+	   END CATCH
+END

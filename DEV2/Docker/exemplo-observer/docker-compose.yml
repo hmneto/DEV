@@ -1,0 +1,7 @@
+version: '3'
+services:
+  savedata:
+    container_name: child_process
+    build: .
+    command: node index.js
+    working_dir: /app
