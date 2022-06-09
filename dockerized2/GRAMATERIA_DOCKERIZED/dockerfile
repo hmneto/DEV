@@ -1,0 +1,13 @@
+FROM php:7.3.3-apache
+ENV APP_HOME /var/www/html
+WORKDIR $APP_HOME
+RUN curl -O https://nodejs.org/download/release/v10.15.2/node-v10.15.2-linux-x64.tar.gz
+RUN tar xzf node-v10.15.2-linux-x64.tar.gz
+ENV PATH="/var/www/html/node-v10.15.2-linux-x64/bin:${PATH}"
+RUN cp /var/www/html/node-v10.15.2-linux-x64/bin/node /bin
+RUN cp /var/www/html/node-v10.15.2-linux-x64/bin/npm /bin
+RUN node -v
+RUN npm -v
+COPY package*.json ./
+RUN npm install
+COPY . .

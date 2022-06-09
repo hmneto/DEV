@@ -1,0 +1,8 @@
+{
+  "name": "AwesomeProject",
+  "displayName": "AwesomeProject",
+  "androidStatusBar":{
+    "barStyle":"dark-content",
+    "backgroundColor":"#fff"
+  }
+}

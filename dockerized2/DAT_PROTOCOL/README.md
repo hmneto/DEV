@@ -1,0 +1,1 @@
+# git clone https://github.com/hmneto/DEV.git && cd DEV/DAT_PROTOCOL && docker-compose up -d --build && docker exec -it DAT_PROTOCOL sh

@@ -1,6 +1,0 @@
-<script>
-    const form = new FormData();
-    form.append("email",prompt('email'))
-    form.append('senha',prompt('senha'))
-    fetch('./Login.php',{method:'post',body:form}).then(data=>data.json()).then(data=>console.log(data))
-</script>

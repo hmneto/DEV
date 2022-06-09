@@ -1,0 +1,54 @@
+FROM php:7.3.3-apache
+
+#install all the system dependencies
+RUN apt-get update && apt-get install -y \
+  git \
+  libicu-dev \
+  libpq-dev \
+  mysql-client \
+  zip \
+  unzip \
+  # https://github.com/Safran/RoPA/issues/4
+  libzip-dev \
+  # https://stackoverflow.com/questions/2977662/php-zip-installation-on-linux
+  zlib1g-dev \
+  && rm -r /var/lib/apt/lists/*
+# configure the php modules
+RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
+  && docker-php-ext-install \
+  intl \
+  mbstring \
+  pcntl \
+  pdo_mysql \
+  mysqli \
+  zip \
+  opcache
+
+
+
+
+
+#set our application folder as an environment variable
+ENV APP_HOME /var/www/html
+#change uid and gid of apache to docker user uid/gid
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+#change the web_root to cakephp /var/www/html/webroot folder
+RUN sed -i -e "s/html/html\/webroot/g" /etc/apache2/sites-enabled/000-default.conf
+# enable apache module rewrite
+RUN a2enmod rewrite
+#copy source files and run composer
+COPY ./server $APP_HOME
+
+
+
+
+#change ownership of our applications
+RUN ls
+RUN chown -R www-data:www-data $APP_HOME
+# RUN php composer.phar create-project --prefer-dist cakephp/app app
+workdir $APP_HOME
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+# RUN php -r "if (hash_file('sha384', 'composer-setup.php') === 'c5b9b6d368201a9db6f74e2611495f369991b72d9c8cbd3ffbc63edff210eb73d46ffbfce88669ad33695ef77dc76976') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN php composer.phar install

@@ -1,0 +1,1 @@
+# git clone https://github.com/hmneto/DEV.git && cd DEV/DRAW_OVER_IMAGE_NODE && docker-compose up -d --build && docker logs --tail 1000 -f escrever_imagem

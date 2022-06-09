@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        var funcNum = @(Context.Request.Query["CKEditorFuncNum"] + ";")
+        $('#fileExplorer').on('click', 'img', function () {
+        var fileUrl = "/uploads/' + $(this).attr('title');
+        window.opener.CKEDITOR.tools.callFunction(funcNum, fileUrl);
+        window.close();
+    }).hover(function() {
+        $(this).css('cursor', 'pointer');
+        });
+    });
+</script>
+    
+<div id="fileExplorer">
+    @foreach(var file in ViewBag.fileInfos){
+    <img src="~/uploads/@file.Name" /> <br />
+    }
+</div>

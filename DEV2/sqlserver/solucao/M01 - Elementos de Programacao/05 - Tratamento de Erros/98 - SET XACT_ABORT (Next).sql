@@ -1,1 +1,0 @@
-https://www.mssqltips.com/sqlservertip/4018/sql-server-transaction-count-after-execute-indicates-a-mismatching-number-of-begin-and-commit-statements/

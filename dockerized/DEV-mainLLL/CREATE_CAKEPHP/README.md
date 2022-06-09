@@ -1,0 +1,1 @@
+# git clone https://github.com/hmneto/DEV.git && cd DEV/CREATE_CAKEPHP && docker-compose up -d --build

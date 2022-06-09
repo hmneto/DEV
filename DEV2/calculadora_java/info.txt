@@ -1,3 +1,0 @@
-cd Área\ de\ Trabalho/
-pwd
-java -jar Calculadora.jar

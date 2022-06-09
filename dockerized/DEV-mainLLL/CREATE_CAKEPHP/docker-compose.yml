@@ -1,0 +1,10 @@
+version: '3'
+services:
+  init:
+    build: .
+    command: composer create-project --prefer-dist cakephp/app html
+    working_dir: /var/www
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www

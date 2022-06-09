@@ -1,0 +1,5 @@
+# git clone https://github.com/hmneto/CORDOVA_DOCKERIZED.git && cd CORDOVA_DOCKERIZED && docker build -t teste . && docker run -it teste cordova build android
+
+# cd /tmp && cordova create MyApp && cd MyApp && cordova platform add android && cordova build android
+
+# git config --global user.email "hmneton@gmail.com" && git config --global user.name "Honorio" && cd /tmp/MyApp/platforms/android/app/build/outputs/apk/debug/ && git clone https://github.com/hmneto/teste2.git && mv app-debug.apk && cd teste2 && git add . && git commit -m "update" && git push

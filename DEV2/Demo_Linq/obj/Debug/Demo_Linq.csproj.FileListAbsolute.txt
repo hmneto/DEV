@@ -1,7 +1,0 @@
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\bin\Debug\Demo_Linq.exe.config
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\bin\Debug\Demo_Linq.exe
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\bin\Debug\Demo_Linq.pdb
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\obj\Debug\Demo_Linq.csprojAssemblyReference.cache
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\obj\Debug\Demo_Linq.csproj.CoreCompileInputs.cache
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\obj\Debug\Demo_Linq.exe
-C:\Users\TI01\Desktop\codes\dev\Demo_Linq\obj\Debug\Demo_Linq.pdb

@@ -1,0 +1,1 @@
+# git clone https://github.com/hmneto/DEV.git && cd DEV/CORDOVA_DOCKERIZED && docker-compose up -d --build
