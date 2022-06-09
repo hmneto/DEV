@@ -1,0 +1,1 @@
+C:\Users\TI01\Desktop\codes\dev\xamarin\Cell\Cell\Cell.UWP\Cell.UWP.csproj;x86

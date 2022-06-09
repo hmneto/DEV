@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "m/CGjZ2IjBHeA22aYr6A+PZtbCqYGdfYYVeSqxtHv/cMY0CW3+Xhh5z0WtVnkYqjKwgkn3pplV366mihgJD+ig==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TI01\\Desktop\\codes\\c-sharp\\MobileTeste\\MobileTeste\\MobileTeste.iOS\\MobileTeste.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TI01\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\TI01\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}

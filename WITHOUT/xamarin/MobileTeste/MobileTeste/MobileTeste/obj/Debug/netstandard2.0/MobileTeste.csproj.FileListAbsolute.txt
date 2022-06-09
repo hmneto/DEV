@@ -1,0 +1,14 @@
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\bin\Debug\netstandard2.0\MobileTeste.deps.json
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\bin\Debug\netstandard2.0\MobileTeste.dll
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\bin\Debug\netstandard2.0\ref\MobileTeste.dll
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\bin\Debug\netstandard2.0\MobileTeste.pdb
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.csprojAssemblyReference.cache
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.AssemblyInfoInputs.cache
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.AssemblyInfo.cs
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.csproj.CoreCompileInputs.cache
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.dll
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\ref\MobileTeste.dll
+C:\Users\TI01\Desktop\codes\c-sharp\MobileTeste\MobileTeste\MobileTeste\obj\Debug\netstandard2.0\MobileTeste.pdb
