@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css_2/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <title>TCC</title>
+</head>
+
+
+<body style="background-color: #2F4F4F;
+          color:black;">
+    <div id="div-corpo">
+        <div id="aparece_top">.
+        </div>
+        <div class="topnav" id="topnavId">
+            <a class="active" href="#home">Home</a>
+
+            <a href="#contact">Como usar</a>
+            <a href="#contact">Como não usar¹</a>
+            <a href="#about">Sobre</a>
+
+        </div>
+
+        <!--MAXIMIZAR / MINIMIZAR -->
+        <div id="div-maisoumenos">
+
+            <button id="btn-mais" type="button" class="btn btn-default">+</button>
+
+            <button id="btn-menos" type="button" class="btn btn-default">-</button>
+        </div>
+
+        <div id="div-botoes">
+
+            <!-- DIV INICIO -->
+            <div id="div-inicio">
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_operadores_all">Operadores</button>
+                    <button type="button" class="btn btn-success" id="btn_obj">Objetos</button>
+                    <button type="button" class="btn btn-danger" id="btn_p_reservada">Palavras Reservadas</button>
+                </center>
+            </div>
+            <!-- DIV OPERADORES -->
+            <div id="operadores_all">
+
+                <button id="btn_voltar_operadores"></button>
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao"> Operadores de Atribuição</button>
+                    <button type="button" class="btn btn-primary" id="btn_comparacao"> Operadores de Comparação</button>
+                    <button type="button" class="btn btn-primary" id="btn_aritmeticos"> Operadores aritméticos</button>
+                    <button type="button" class="btn btn-primary" id="btn_logicos"> Operadores Lógicos</button>
+                    <!--https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_atribuicao-->
+                </center>
+            </div>
+            <!-- DIV OPERADORES  ATRIBUICAO-->
+            <div id="operadores_atribuicao">
+                <button id="btn_voltar_operadores_atribuicao"></button>
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO"> = </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-ADICAO"> += </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-SUBTRCAO"> -= </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-MULTIPLICACAO"> *= </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-DIVISAO"> /= </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-RESTO"> %= </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-EXPONENCIAL"> ** </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-AND"> &(AND) </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-OR"> |(OR) </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-XOR"> ^(XOR) </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_ATRIBUICAO-NOT"> !(NOT) </button>
+                </center>
+            </div>
+            <!--OPERADORES  COMPARAÇÃO-->
+            <div id="operadores_comparacao">
+                <button id="btn_voltar_operadores_comparacao"></button>
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-IGUAL"> == </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-NAOIGUAL"> != </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-MAIOR"> >(MAIOR) </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-MAIOROUIGUAL"> >= </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-MENOR">
+                        <(MENOR) </button>
+                            <button type="button" class="btn btn-primary" id="btn_atribuicao_COMPARACAO-MENOROUIGUAL">
+                                <=< /button>
+                </center>
+            </div>
+            <!--OPERADORES  ARITMETICOS   -->
+            <div id="operadores_aritmeticos">
+                <button id="btn_voltar_operadores_aritmeticos"></button>
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-MODULO"> %(RESTO) </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-INCREMENTO"> ++ </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-DECREMENTO"> -- </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-NEGACAO"> - </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-ADICAO">+ </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-EXPONENCIACAO"> ** </button>
+
+                </center>
+            </div>
+            <!--OPERADORES  LOGICOS   -->
+            <div id="operadores_logicos">
+                <button id="btn_voltar_operadores_logicos"></button>
+                <center>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-AND">&& </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-OR">|| </button>
+                    <button type="button" class="btn btn-primary" id="btn_atribuicao_aritmeticos-NOT">! </button>
+
+                </center>
+            </div>
+
+
+            <!-- DIV OBJETOS -->
+            <div id="div-obj">
+                <button id="btn_voltar_obj"></button>
+                <center>
+                    <!--https://imasters.com.br/artigo/1966/javascript/hierarquia-de-objetos/?trace=1519021197&source=single-->
+                    <!--https://pt.scribd.com/document/282767398/14-0-Os-Objetos-array-date-e-math-pdf-->
+                    <button type="button" class="btn btn-success" id="btn_obj_window"> Window</button>
+                    <button type="button" class="btn btn-success" id="btn_obj_document"> Document</button>
+                    <button type="button" class="btn btn-success" id="btn_obj_navigator"> Navigator</button>
+                    <button type="button" class="btn btn-success" id="btn_obj_date"> Date</button>
+                    <button type="button" class="btn btn-success" id="btn_obj_math"> Math</button>
+                    <button type="button" class="btn btn-success" id="btn_obj_string"> String</button>
+                </center>
+            </div>
+            <!-- OBJ WINDOWS -->
+            <div id="div-obj-window">
+                <button id="btn_voltar_obj_window"></button>
+                <center>
+                    <table id="table-obj-window">
+                        <tr>
+                            <!--
+                                 <h5>Window</h5>
+                                http://www.nce.ufrj.br/ginape/js/conteudo/janelas/propriedades.htm-->
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_window_ALERT"> Alert()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_window_CONFIRM"> Confirm()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_window_PROMPT"> Prompt()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_window_BLUR"> Blur()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_window_FOCUS"> Focus()</button>
+                            </th>
+                        </tr>
+                    </table>
+                    <table id="table-obj-window-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_window_NAME"> Name</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_window_STATUS">Status</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_window_DefaultStatus"> DefaultStatus</button>
+                            </th>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- OBJ DOCUMENT -->
+            <div id="div-obj-document">
+                <button id="btn_voltar_obj_document"></button>
+                <center>
+
+                    <table id="table-obj-document">
+                        <tr>
+                            <!--
+                                <h5>Document</h5>
+                                http://www.nce.ufrj.br/ginape/js/conteudo/dom/document.htm-->
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_document_WRITE"> write</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_document_WRITELN"> writeln</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_document_OPEN"> open()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_document_CLOSE"> close()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_document_getElementById"> getElementById()</button>
+                            </th>
+
+                        </tr>
+                    </table>
+                    <table id="table-obj-document-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_document_BGCOLOR"> Bgcolor</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_document_TITLE"> Title</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_document_REFERRER"> Referrer</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_document_IMAGES"> Images</button>
+                            </th>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- OBJ NAVIGATOR -->
+            <div id="div-obj-navigator">
+                <button id="btn_voltar_obj_navigator"></button>
+                <center>
+                    <table id="table-obj-navigator">
+                        <tr>
+                            <!--
+                                 <h5>navigator</h5>
+                               https://www.w3schools.com/jsref/obj_navigator.asp-->
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_navigator_JAVAENABLED"> javaEnabled()</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-success" id="btn_obj_navigator_TAINENABLED"> taintEnabled()</button>
+                            </th>
+                        </tr>
+                    </table>
+                    <table id="table-obj-navigator-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_navigator_GEOLOCATION"> Geolocation</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_navigator_LANGUAGE"> Language</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_navigator_PRODUCT"> Product</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_navigator_ONLINE"> OnLine</button>
+                            </th>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- OBJ date -->
+            <div id="div-obj-date">
+                <button id="btn_voltar_obj_date"></button>
+                <center>
+
+                    <!--
+                         <h5>date</h5>
+                       https://msdn.microsoft.com/pt-br/library/cd9w2te4(v=vs.94).aspx
+                        https://www.w3schools.com/jsref/jsref_obj_date.asp-->
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETDATE"> getDate()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETDAY"> getDay()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETFULLDAY"> getFullYear()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETHOURS"> getHours()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETMILISECONDS"> getMilliseconds()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETTIME"> getTime()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_SETDAY"> setDate()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_SETFULLYEAR"> setFullYear()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_SETHOURS"> setHours()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETDAY"> setTime()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_GETDAY"> getDay()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_NOW"> now()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_date_TOSTRING"> toString()</button>
+                    </th>
+
+
+                    <table id="table-obj-date-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_date_CONSTRUCTOR"> constructor</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_date_PROTOTYPE"> prototype</button>
+                            </th>
+
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- OBJ math -->
+            <div id="div-obj-math">
+                <button id="btn_voltar_obj_math"></button>
+                <center>
+
+
+                    <!--
+                                 <h5>math</h5>
+                               https://www.devmedia.com.br/matematica-em-javascript-o-objeto-math/27439
+                                https://msdn.microsoft.com/pt-br/library/b272f386(v=vs.94).aspx-->
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_COS"> cos()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_MAX"> max(X,Y)</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_MIN"> min(X,Y)</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_POW">pow(B,E)</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_RANDOM"> random(X,Y)</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_ROUND"> round()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_SIN"> sin()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_COS"> cos()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_math_TAN"> tan()</button>
+                    </th>
+
+
+
+                    <table id="table-obj-math-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_math_SQRT2">SQRT2</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_math_LN10">LN10</button>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_math_PI">PI</button>
+                            </th>
+
+
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- OBJ STRING-->
+            <div id="div-obj-string">
+                <button id="btn_voltar_obj_string"></button>
+                <center>
+
+                    <!--
+                                 <h5>string</h5>
+                                https://www.w3schools.com/js/js_string_methods.asp
+                                -->
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_INDEXOF"> indexOf()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_LASTINDEXOF">lastIndexOf ()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_SEARCH">search ()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_SLICE">slice()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_SUBSTRING">substring()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_REPLACE"> replace()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_TOUPPERCASE"> toUpperCase()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_TOLOWERCASE"> toLowerCase()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_CONCAT"> concat()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_CHARAT"> charAt()</button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-success" id="btn_obj_string_SPLIT"> split()</button>
+                    </th>
+
+
+                    <table id="table-obj-string-2">
+                        <tr>
+                            <th>
+                                <button type="button" class="btn btn-danger" id="btn_obj_string_LENGTH">length</button>
+                            </th>
+
+
+
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!-- DIV PALAVRAS RESERVADAS -->
+            <div id="div-p-reservada">
+                <button id="btn_voltar_p_reservada"></button>
+                <center>
+                    <button type="button" class="btn btn-danger" id="btn_p-reservada_repeticao"> Repetição</button>
+                    <button type="button" class="btn btn-warning" id="btn_p-reservada_condicao"> Condicão</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros"> Outros</button>
+                </center>
+            </div>
+            <!-- DIV PALAVRAS RESERVADAS/REPETICÃO -->
+            <div id="div-p-reservada-repeticao">
+                <button id="btn_voltar_p_reservada-repeticao"></button>
+                <center>
+                    <button type="button" class="btn btn-danger" id="btn_p-reservada_FOR"> For</button>
+                    <button type="button" class="btn btn-danger" id="btn_p-reservada_FOREACH"> Foreach</button>
+                    <button type="button" class="btn btn-danger" id="btn_p-reservada_WHILE"> While</button>
+                    <button type="button" class="btn btn-danger" id="btn_p-reservada_DOWHILE">Do While</button>
+
+                </center>
+            </div>
+            <!-- DIV PALAVRAS RESERVADAS/CONDIÇÃO -->
+            <div id="div-p-reservada-condicao">
+                <button id="btn_voltar_p_reservada-condicao"></button>
+                <center>
+                    <button type="button" class="btn btn-warning" id="btn_p-reservada_condicao_IF"> If</button>
+                    <button type="button" class="btn btn-warning" id="btn_p-reservada_condicao_ELSE"> else</button>
+                    <button type="button" class="btn btn-warning" id="btn_p-reservada_condicao_SWITCH"> Switch</button>
+                    <button type="button" class="btn btn-warning" id="btn_p-reservada_condicao_CASE">case</button>
+                </center>
+            </div>
+            <!-- DIV PALAVRAS RESERVADAS/CONDIÇÃO -->
+            <div id="div-p-reservada-outros">
+                <button id="btn_voltar_p_reservada-outros"></button>
+                <center>
+                    <!-- https://msdn.microsoft.com/pt-br/library/0779sbks(v=vs.94).aspx-->
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_VAR"> var</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_CONST"> const</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_RETURN"> return</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_DEFAULT">default</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_DEBUGGER">debugger</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_TYPEOF">typeof</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_FINALLY">finally</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_THROW">throw</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_CONTINUE">continue</button>
+                    <button type="button" class="btn btn-sucess" id="btn_p-reservada_outros_BREAK">break</button>
+
+                </center>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/js_2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

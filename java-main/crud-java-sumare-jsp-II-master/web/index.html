@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                display: inline-block;
+                width: 10%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form id="formulario" action="dados.jsp" method="post">
+            <fieldset>
+                <label>ID: </label><input type="text" name="id">
+            </fieldset>
+            <fieldset>
+                <label>NOME: </label><input type="text" name="nome">
+            </fieldset>
+            <fieldset>
+                <input id="acao" type="hidden"  name="acao"><br>
+                <input type="button" value="enviar" onclick="enviar(1)">
+                <input type="button" value="deletar" onclick="enviar(2)">
+                <input type="button" value="editar" onclick="enviar(3)">
+                <input type="button" value="listar" onclick="enviar(4)">
+                <input type="reset" value="limpar">
+            </fieldset>
+        </form>
+        <script>
+            function enviar(acao) {
+                document.getElementById("acao").value = acao;
+                document.getElementById("formulario").submit();
+            }
+        </script>
+    </body>
+</html>

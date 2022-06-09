@@ -1,0 +1,21 @@
+<button id="botao">enviar</button>
+<script>
+    var marcador = new Object();
+    marcador.lat = 1.22;
+    marcador.long = 3.44;
+    marcador = JSON.stringify(marcador);
+    console.log(marcador);
+
+    var botao = document.querySelector('#botao');
+    botao.addEventListener("click", function () {
+        var xhttpRequest = new XMLHttpRequest();
+        xhttpRequest.onload = function () {
+            alert("retorno do servidor " + xhttpRequest.responseText);
+        }
+        xhttpRequest.open('POST', 'http://localhost/obj-json-ajax.php');
+        xhttpRequest.send(marcador);
+    });
+
+</script>
+
+

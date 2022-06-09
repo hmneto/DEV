@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>   
+        <script>
+            function enviar(acao)
+            {
+                document.getElementById("acao").value=acao;
+                document.getElementById("myForm").submit(); 
+            }
+        </script>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     <form id="myForm" action="mostrardados.jsp" method="post"> 
+  Código: 
+  <input type="text" name="codigo" value="">
+  <br><br> Nome: 
+  <input type="text" name="nome" value="">
+  <br><br>
+  <input type="button" value="Inserir" OnClick="enviar(1)">
+  <input type="button" value="Excluir" OnClick="enviar(2)">
+  <input type="button" value="Editar" OnClick="enviar(3)">
+  <input type="button" value="Listar" OnClick="enviar(4)">
+  <input type="reset" value="Limpar" >
+ <input type="hidden" id="acao" name="acao" value="">
+ 
+  
+        
+      </form>
+        
+    </body>
+</html>

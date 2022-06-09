@@ -1,0 +1,33 @@
+version: "3"
+services:
+  db:
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    container_name: mysql_server
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: xxxx
+      MYSQL_DATABASE: xxxxx
+      MYSQL_USER: xxxx
+      MYSQL_PASSWORD: xxxx
+
+  wordpress:
+    container_name: wordpress  
+    build: .
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 80:80
+    volumes:
+     - ./wordpress/:/var/www/html
+
+  adminer:
+    image: adminer
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 85:8080

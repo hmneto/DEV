@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.perservice.hmneton.petservice.ActRegiao"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/lblRegião"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:id="@+id/grupo">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnCidade"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Centro"
+            android:id="@+id/rbCentro"
+            android:layout_below="@+id/textView4"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zona Sul"
+            android:id="@+id/rbSul"
+            android:layout_alignBaseline="@+id/rbLeste"
+            android:layout_alignBottom="@+id/rbLeste"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zona Norte"
+            android:id="@+id/rbNorte"
+            android:layout_below="@+id/rbCentro"
+            android:layout_alignLeft="@+id/rbSul"
+            android:layout_alignStart="@+id/rbSul"
+            android:checked="false"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zona Leste"
+            android:id="@+id/rbLeste"
+            android:layout_alignBaseline="@+id/rbNorte"
+            android:layout_alignBottom="@+id/rbNorte"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zona Oeste"
+            android:id="@+id/rbOeste"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/rbSul"
+            android:layout_alignStart="@+id/rbSul"
+            android:checked="false"
+            android:textSize="30dp" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar"
+        android:id="@+id/btnSelecionar"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

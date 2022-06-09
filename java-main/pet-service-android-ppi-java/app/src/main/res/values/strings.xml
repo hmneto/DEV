@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pet Service</string>
+    <string name="lblNome">Nome</string>
+    <string name="lblEndereco">Endereço</string>
+    <string name="lblZona">Região</string>
+    <string name="lblRegião">Selecione a Região</string>
+</resources>
