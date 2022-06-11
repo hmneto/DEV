@@ -1,0 +1,15 @@
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.csprojAssemblyReference.cache
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.AssemblyInfoInputs.cache
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.AssemblyInfo.cs
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.csproj.CoreCompileInputs.cache
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.exe
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.deps.json
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.runtimeconfig.json
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.runtimeconfig.dev.json
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.dll
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapperList.pdb
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.csproj.CopyComplete
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.dll
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.pdb
+C:\Users\TI01\Desktop\codes\c-sharp\AutoMapperList\AutoMapperList\obj\Debug\netcoreapp3.1\AutoMapperList.genruntimeconfig.cache
