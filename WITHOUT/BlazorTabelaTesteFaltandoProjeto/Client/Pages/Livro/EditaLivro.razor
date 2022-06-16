@@ -1,0 +1,64 @@
+﻿@page "/livro/edita/{id:int}"
+@inject HttpClient http
+@inject NavigationManager NavManager
+
+@if (autorViewModel != null)
+{
+<form onsubmit="return false">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="text" class="form-control" placeholder="Nome" @ref="inputElement"
+               @bind-value="@livroViewModel.NomeLivro" @bind-value:event="oninput">
+    </div>
+
+    <select class="form-control"
+            @bind-value="@livroViewModel.IdAutorForeignKey" @bind-value:event="oninput">
+        <option selected value="0">Open this select menu</option>
+        @foreach (AutorViewModel autorView in autorViewModel)
+        {
+            <option value="@autorView.IdAutor">@autorView.Nome</option>
+        }
+    </select>
+
+
+
+
+    <button type="submit" class="btn btn-primary" @onclick="SalvaLivro">Submit</button>
+</form>
+}
+
+@code{
+    [Parameter]
+    public int id { get; set; }
+
+    public LivroViewModel livroViewModel = new LivroViewModel();
+    public IList<AutorViewModel> autorViewModel { get; set; }
+    public ElementReference inputElement { get; set; }
+    public bool controle { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        LivroViewModel a = new LivroViewModel() { IdLivro = id };
+        HttpResponseMessage livro = await http.PostAsJsonAsync("Livro/GetLivro", a);
+        livroViewModel = await livro.Content.ReadFromJsonAsync<LivroViewModel>();
+        autorViewModel = await http.GetFromJsonAsync<IList<AutorViewModel>>("Autor/GetAutores");
+        controle = true;
+    }
+
+
+    public async void SalvaLivro()
+    {
+        await http.PostAsJsonAsync("Livro/ModifyLivro", livroViewModel);
+        NavManager.NavigateTo("/livro");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (autorViewModel != null && controle == true)
+        {
+            await inputElement.FocusAsync();
+            controle = false;
+        }
+
+    }
+}
+

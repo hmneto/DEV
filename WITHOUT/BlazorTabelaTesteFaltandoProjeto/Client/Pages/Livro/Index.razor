@@ -1,0 +1,85 @@
+﻿@page "/livro"
+@inject HttpClient http
+
+
+<NavLink class="nav-link" href="/livro/cadastro">
+    <button class="btn btn-info">Cadastra Livro</button>
+</NavLink>
+
+@if (livroViewModel == null)
+{
+    <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e478lp2rpvk9z9cx6fmh333u597cdp069894cpg9gbq&rid=giphy.gif" />
+}
+else if (!livroViewModel.Any<LivroViewModel>())
+{
+    <p>Cadastre </p>
+}
+
+
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Nome do Livro
+                </th>
+
+                <th>
+                    Autor do Livro
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (LivroViewModel li in livroViewModel)
+            {
+                <tr>
+                    <td>@li.NomeLivro</td>
+                    <td>@autorViewModel.Where(x => x.IdAutor == li.IdAutorForeignKey).Select(x => x.Nome).FirstOrDefault()</td>
+                    <td>
+                        <button @onclick="()=>ApagarLivro(li)" class="btn btn-danger">Apagar</button>
+                        <NavLink href="@($"/livro/edita/{li.IdLivro}")">
+                            <button class="btn btn-primary"> Modificar</button>
+                        </NavLink>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <Confirma @ref="confirmacao" onCancela="CancelaConfirmacao" onConfirma="RemoverTarefaConfirmacao">
+        <p>Deseja Excluir esta tarefa ?</p>
+    </Confirma>
+}
+@code {
+    public Confirma confirmacao { get; set; }
+    public IList<LivroViewModel> livroViewModel { get; set; }
+    public IList<AutorViewModel> autorViewModel { get; set; }
+    public LivroViewModel _livroView { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        livroViewModel = await http.GetFromJsonAsync<IList<LivroViewModel>>("/Livro/GetLivros");
+        autorViewModel = await http.GetFromJsonAsync<IList<AutorViewModel>>("Autor/GetAutores");
+    }
+
+    public void ApagarLivro(LivroViewModel livroView)
+    {
+        _livroView = livroView;
+        confirmacao.Exibir();
+    }
+
+    public void CancelaConfirmacao()
+    {
+        _livroView = null;
+        confirmacao.Ocultar();
+    }
+
+    public async Task RemoverTarefaConfirmacao()
+    {
+        confirmacao.Ocultar();
+        HttpResponseMessage te = await http.PostAsJsonAsync("/Livro/DeleteLivro", _livroView);
+        livroViewModel = await http.GetFromJsonAsync<IList<LivroViewModel>>("/Livro/GetLivros");
+    }
+}
